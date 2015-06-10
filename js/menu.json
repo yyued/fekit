@@ -1,0 +1,100 @@
+{
+  "menu": [
+    {
+      "name": "UI",
+      "items": [
+        {
+          "name": "表单UI",
+          "path": "ui",
+          "default": true
+        }
+      ]
+    },
+    {
+      "name": "编码解码",
+      "items": [
+        {
+          "name": "URL 编码解码",
+          "path": "url-encoder"
+        },
+        {
+          "name": "base64 编码解码",
+          "path": "base64-encoder"
+
+        },
+        {
+          "name": "二维码 生成器",
+          "path": "qrcode-generator"
+        }
+      ]
+    },
+    {
+      "name": "格式化",
+      "items": [
+        {
+          "name": "json",
+          "path": "json-formatter"
+        },
+        {
+          "name": "js",
+          "path": "js-formatter"
+        },
+        {
+          "name": "css",
+          "path": "css-formatter"
+        },
+        {
+          "name": "html",
+          "path": "html-formatter"
+        }
+      ]
+    },
+    {
+      "name": "压缩",
+      "items": [
+        {
+          "name": "js",
+          "path": "js-minifier"
+        },
+        {
+          "name": "css",
+          "path": "css-minifier"
+        },
+        {
+          "name": "img",
+          "path": "html-minifier"
+        }
+      ]
+    },
+    {
+      "name": "转义",
+      "items": [
+        {
+          "name": "html",
+          "path": "html-escaper"
+        },
+        {
+          "name": "js",
+          "path": "js-escaper"
+        }
+      ]
+    },
+    {
+      "name": "其他",
+      "items": [
+        {
+          "name": "regExp 测试",
+          "path": "regexp-tester"
+        },
+        {
+          "name": "css 三角形",
+          "path": "css-triangle"
+        },
+        {
+          "name": "css 透明背景",
+          "path": "css-transparent"
+        }
+      ]
+    }
+  ]
+}

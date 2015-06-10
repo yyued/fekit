@@ -1,0 +1,24 @@
+{
+  "name": "fekit",
+  "description": "f2e dev toolkit",
+  "version": "0.0.1",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "width": 940,
+    "height": 500
+  },
+  "dependencies": {
+    "lodash": "^3.9.3",
+    "multiline": "^1.0.2",
+    "mustache": "^2.1.0",
+    "qrcode": "^0.2.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duowan/fekit.git"
+  },
+  "devDependencies": {
+    "jquery": "^2.1.4"
+  }
+}
