@@ -37,7 +37,7 @@ function drop(e) {
 }
 
 // 2. dropbox click
-$(dropbox).on('click', function(e){
+$(dropbox).on('dblclick', function(e){
     if(isElement($fileInput)){
         $fileInput.trigger('click')
         e.preventDefault()
@@ -47,7 +47,61 @@ $fileInput.on('change', function (e) {
     handleFiles(this.files)
 })
 
+
+// 3. dropbox paste
+// 3.1 enable editable
+var gui = require('nw.gui');
+if (process.platform === "darwin") {
+    var mb = new gui.Menu({type: 'menubar'});
+    mb.createMacBuiltin('RoboPaint', {
+        hideEdit: false
+    });
+    gui.Window.get().menu = mb;
+}
+// 3.2 bind paste event
+$(dropbox)[0].addEventListener('paste', handlePaste)
+
+
 // utils
+
+function handlePaste(e){
+    if (e.clipboardData) {
+        // Get the items from the clipboard
+        var items = e.clipboardData.items;
+        if (items) {
+            // Loop through all items, looking for any kind of image
+            for (var i = 0; i < items.length; i++) {
+                if (items[i].type.indexOf("image") !== -1) {
+                    // We need to represent the image as a file,
+                    var blob = items[i].getAsFile();
+
+                    // The URL can then be used as the source of an image
+                    createImage(blob);
+
+                }
+            }
+        }
+    }
+
+    /* Creates a new image from a given source */
+    function createImage(blob) {
+        var pastedImage = document.createElement('img')
+        var reader = new FileReader();
+        reader.onload = (function(aImg) {
+            return function(e) { aImg.src = e.target.result; };
+        })(pastedImage);
+        reader.readAsDataURL(blob)
+        $(dropbox).html(pastedImage)
+
+        setTimeout(function(){
+            var base64 = $(dropbox).find('img').attr('src')
+            $out.text(generatorCSSImg(base64))
+            clipboard.set(generatorCSSImg(base64), 'text')
+            notifier.notify({'message':'css 代码已复制到剪切板！'})
+        }, 50)
+
+    }
+}
 
 function handleFiles(files) {
 

@@ -18,7 +18,7 @@
           "path": "url-encoder"
         },
         {
-          "default": true,
+
           "name": "base64 编码解码",
           "path": "base64-encoder"
 
@@ -84,6 +84,7 @@
       "name": "其他",
       "items": [
         {
+          "default": true,
           "name": "regExp 测试",
           "path": "regexp-tester"
         },

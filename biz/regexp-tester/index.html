@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> UI demo </title>
+    <!-- <link href="../../css/global.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+    <style>
+        .form-wrap{border-radius: 3px; background-color: #f1f1f1; padding: 20px; border:1px solid #999;}
+
+        b{background-color: red;}
+    </style>
+</head>
+
+<body>
+
+<h1>Base64 编码/解码</h1>
+
+
+<div class="form-wrap">
+    <form action="" id="in" target="anonymous" method="post">
+
+        <div class="uiTxt">字符串拷贝到这里</div>
+        <textarea name="inputString" id="" cols="50" rows="5"></textarea>
+
+        <div class="uiTxt">输入正则表达式</div>
+        <input name="regexp" type="text" class="form-control" placeholder="" >
+
+    </form>
+</div>
+
+<div id="out" style="width: 200px; height: 200px; border:1px solid red; overflow: scroll" contenteditable=""></div>
+
+
+<script src="http://assets.dwstatic.com/common/js/jquery.js"></script>
+<script src="index.js"></script>
+</body>
+
+</html>
