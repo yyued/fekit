@@ -10,61 +10,19 @@ var gui = require('nw.gui')
 var notifier = require('node-notifier')
 
 // common data
-var	$fileInput = $('#file')
-var preview = document.getElementById('dropbox')
-var dropbox = document.getElementById('dropbox')
+var $dropbox = $('#dropbox')
+var $preview = $('#dropbox')
 var $out = $('#out')
 var clipboard = gui.Clipboard.get()
 
-
-// 1. dropbox drag
-dropbox.addEventListener('dragenter', dragenter, false);
-dropbox.addEventListener('dragover', dragover, false);
-dropbox.addEventListener('drop', drop, false);
-function dragenter(e) {
-    e.stopPropagation();
-    e.preventDefault();
-}
-function dragover(e) {
-    e.stopPropagation();
-    e.preventDefault();
-}
-function drop(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    var files = e.dataTransfer.files;
-    handleFiles(files);
-}
-
-// 2. dropbox click
-$(dropbox).on('dblclick', function(e){
-    if(isElement($fileInput)){
-        $fileInput.trigger('click')
-        e.preventDefault()
-    }
-})
-$fileInput.on('change', function (e) {
-    handleFiles(this.files)
-})
+// 1. main
+dragAndBrowser($dropbox, handleFiles)
+$dropbox.on('paste', handlePaste)
 
 
-// 3. dropbox paste
-// 3.1 enable editable
-var gui = require('nw.gui');
-if (process.platform === "darwin") {
-    var mb = new gui.Menu({type: 'menubar'});
-    mb.createMacBuiltin('RoboPaint', {
-        hideEdit: false
-    });
-    gui.Window.get().menu = mb;
-}
-// 3.2 bind paste event
-$(dropbox)[0].addEventListener('paste', handlePaste)
-
-
-// utils
-
+// 2. partial
 function handlePaste(e){
+    e = e.originalEvent
     if (e.clipboardData) {
         // Get the items from the clipboard
         var items = e.clipboardData.items;
@@ -91,10 +49,10 @@ function handlePaste(e){
             return function(e) { aImg.src = e.target.result; };
         })(pastedImage);
         reader.readAsDataURL(blob)
-        $(dropbox).html(pastedImage)
+        $dropbox.html(pastedImage)
 
         setTimeout(function(){
-            var base64 = $(dropbox).find('img').attr('src')
+            var base64 = $dropbox.find('img').attr('src')
             $out.text(generatorCSSImg(base64))
             clipboard.set(generatorCSSImg(base64), 'text')
             notifier.notify({'message':'css 代码已复制到剪切板！'})
@@ -118,7 +76,7 @@ function handleFiles(files) {
 
         // convert preview print clipboard and notice
         var base64 = file2base64(file)
-        previewFile($(preview), base64)
+        previewFile($preview, base64)
         $out.text(generatorCSSImg(base64))
         clipboard.set(generatorCSSImg(base64), 'text')
         notifier.notify({'message':'css 代码已复制到剪切板！'})
@@ -142,6 +100,7 @@ function generatorCSSImg(code){
     return 'background-image:url("'+code+'")'
 }
 
+// 3. utils
 
 function isElement(el){
     if (el.length) {
@@ -150,8 +109,37 @@ function isElement(el){
     return !!el
 }
 
+function dragAndBrowser(el, handleFiles){
+    var $el = $(el)
+    var $file = $('<input type="file" style="display: none"/>')
+    $file.insertAfter($el)
 
+    $el.on('dblclick', function(e){
+        $file.trigger('click')
+        e.preventDefault()
+    })
+    $file.on('change', function (e) {
+        handleFiles(this.files)
+    })
 
+    $el.on('dragenter', dragenter)
+    $el.on('dragover', dragover)
+    $el.on('drop', drop)
 
+    function dragenter(e) {
+        e.stopPropagation()
+        e.preventDefault()
+    }
+    function dragover(e) {
+        e.stopPropagation()
+        e.preventDefault()
+    }
+    function drop(e) {
+        e.stopPropagation()
+        e.preventDefault()
 
+        var files = e.originalEvent.dataTransfer.files
+        handleFiles(files)
+    }
 
+}

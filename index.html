@@ -52,9 +52,15 @@
     var menuJSON = require('./js/menu.json')
 
 
-//    $('#targetPage').on('load', function(){
-//        renderMenu()
-//    })
+    // gobal env
+    var gui = require('nw.gui');
+    if (process.platform === "darwin") {
+        var mb = new gui.Menu({type: 'menubar'});
+        mb.createMacBuiltin('RoboPaint', {
+            hideEdit: false
+        });
+        gui.Window.get().menu = mb;
+    }
 
     // Menu render
     renderMenu()
