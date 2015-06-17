@@ -14,6 +14,7 @@
       "name": "编码解码",
       "items": [
         {
+
           "name": "URL 编码解码",
           "path": "url-encoder"
         },
@@ -24,6 +25,7 @@
 
         },
         {
+
           "name": "二维码 生成器",
           "path": "qrcode-generator"
         }
@@ -33,7 +35,7 @@
       "name": "格式化",
       "items": [
         {
-          "default": true,
+
           "name": "html/js/css",
           "path": "formatter"
         }
@@ -53,6 +55,7 @@
       "name": "转义",
       "items": [
         {
+          "default": true,
           "name": "html",
           "path": "html-escaper"
         },
