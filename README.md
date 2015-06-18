@@ -1,4 +1,11 @@
-# 开发文档
+# 简介
+
+
+## 功能说明
+
+## 下载地址
+* [osx64][2]
+* [win64][3]
 
 ## 开发环境
 * 确定全局安装了这些模块 `npm i -g gulp nw`
@@ -17,3 +24,5 @@
 * 在任意目录执行 `nwbuild <path-to-nwapp>`，[详细][1]
 
 [1]: https://github.com/mllrsohn/node-webkit-builder
+[2]: http://pan.baidu.com/s/1sjkepCL#path=%252Ffekit%252Fosx64
+[3]: http://pan.baidu.com/s/1sjkepCL#path=%252Ffekit%252Fwin64

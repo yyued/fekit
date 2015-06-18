@@ -4,7 +4,7 @@
       "name": "UI",
       "items": [
         {
-          "name": "表单UI",
+          "name": "表单UI (TODO)",
           "path": "ui"
 
         }
@@ -74,12 +74,16 @@
           "path": "regexp-tester"
         },
         {
-          "name": "css 三角形",
+          "name": "css 三角形 (TODO)",
           "path": "css-triangle"
         },
         {
-          "name": "css 透明背景",
+          "name": "css 透明背景 (TODO)",
           "path": "css-transparent"
+        },
+        {
+          "name": "设计稿标注 (TODO)",
+          "path": "color-palette"
         }
       ]
     }
