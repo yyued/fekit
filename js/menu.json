@@ -20,7 +20,7 @@
         },
         {
 
-          "name": "base64 编码解码",
+          "name": "图片 base64编码",
           "path": "base64-encoder"
 
         },

@@ -7,3 +7,13 @@
     * 指定node-webkit app 为当前目录
     * 指定working directory 为当前目录
     * 指定node-webkit解释器为：`/usr/local/lib/node_modules/nw/bin/nw`
+    * 在environment variable添加环境变量
+        * 键：PATH
+        * 值：命令行执行`echo "$PATH"` 复制该值
+
+
+## 构建环境
+* 安装构建模块 `npm i -g node-webkit-builder`
+* 在任意目录执行 `nwbuild <path-to-nwapp>`，[详细][1]
+
+[1]: https://github.com/mllrsohn/node-webkit-builder

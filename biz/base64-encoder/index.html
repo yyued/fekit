@@ -18,14 +18,13 @@
 
 <body>
 
-<h1>Base64 编码/解码</h1>
+<h1>图片 base64编码</h1>
 
 
 <div class="form-wrap">
 <form action="" id="in" target="anonymous" method="post">
 
 	<div id="dropbox" style="width: 200px; height: 200px; border:1px solid #999;" contenteditable>双击浏览或拖拽图片</div>
-	<!--<input type="file" id="file" style="display: none"/>-->
 
 </form>
 </div>
@@ -33,49 +32,9 @@
 <div id="out" style="width: 200px; height: 200px; border:1px solid red; overflow: scroll" contenteditable=""></div>
 
 <iframe name="anonymous" src="" frameborder="0" style="display:none;"></iframe>
-<!-- demo end -->
-
-<script src="http://assets.dwstatic.com/common/js/jquery.js"></script>
-<script>
-
-	// 1.1 core api
-//	function encode64(str) {
-//		return new Buffer(str).toString('base64')
-//	}
-//	function decode64(str) {
-//		return new Buffer(str, 'base64').toString()
-//	}
-
-	// 1.2 local api
-	// ...
-	
-	// 2.1 text encode
-	var $form = $('#in'),
-		$encode = $form.find('[data-xrole="encode"]'),
-		$result = $('#out')
-
-	$form.on('click', '[data-xrole="encode"]', function(e){
-		var input = '@todo' // input = $(form).serialize()
-		var output = require('./js/base64').encode(input)
-		$result.text(output)
-	})
-
-	$form.on('click', '[data-xrole="decode"]', function(e){
-		var input = 'QHRvZG8' // input = $(form).serialize()
-		var output = require('./js/base64').decode(input)
-		$result.text(output)
-	})
 
 
-	//
-	$("#fileInput").on("change", function () {
-		var files = $(this)[0].files;
-		for (var i = 0; i < files.length; ++i) {
-			alert(files[i].path);
-		}
-	});
-	
-</script>
+<script src="../../js/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="index.js"></script>
 </body>
 

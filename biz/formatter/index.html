@@ -19,7 +19,7 @@
 
 <body>
 
-<h1>Js压缩</h1>
+<h1> html/css/js 格式化</h1>
 
 
 <div class="form-wrap">
@@ -29,7 +29,7 @@
 	<label><input name="fileType" type="radio" value="text/html" > html</label>
 	<label><input name="fileType" type="radio" value="text/css"> css</label>
 	<label><input name="fileType" type="radio" value="text/javascript"> js</label>
-	<textarea name="dropbox" id="dropbox" cols="30" rows="10" placeholder="双击浏览或拖拽图片"></textarea>
+	<textarea name="dropbox" id="dropbox" cols="30" rows="10" placeholder="输入文本 或双击浏览 或拖拽文件"></textarea>
 
 </form>
 </div>
@@ -38,47 +38,7 @@
 <textarea id="out" cols="30" rows="10" style="border:1px solid red; overflow: scroll" contenteditable></textarea>
 
 
-<script src="http://assets.dwstatic.com/common/js/jquery.js"></script>
-<script>
-
-	// 1.1 core api
-//	function encode64(str) {
-//		return new Buffer(str).toString('base64')
-//	}
-//	function decode64(str) {
-//		return new Buffer(str, 'base64').toString()
-//	}
-
-	// 1.2 local api
-	// ...
-	
-	// 2.1 text encode
-	var $form = $('#in'),
-		$encode = $form.find('[data-xrole="encode"]'),
-		$result = $('#out')
-
-	$form.on('click', '[data-xrole="encode"]', function(e){
-		var input = '@todo' // input = $(form).serialize()
-		var output = require('./js/base64').encode(input)
-		$result.text(output)
-	})
-
-	$form.on('click', '[data-xrole="decode"]', function(e){
-		var input = 'QHRvZG8' // input = $(form).serialize()
-		var output = require('./js/base64').decode(input)
-		$result.text(output)
-	})
-
-
-	//
-	$("#fileInput").on("change", function () {
-		var files = $(this)[0].files;
-		for (var i = 0; i < files.length; ++i) {
-			alert(files[i].path);
-		}
-	});
-	
-</script>
+<script src="../../js/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="index.js"></script>
 </body>
 

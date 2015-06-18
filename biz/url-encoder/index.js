@@ -21,7 +21,7 @@ var clipboard = gui.Clipboard.get()
 $dropbox.on('input', handleInput)
 $go.on('change', handleInput)
 
-function handleInput2(e){
+function handleInput(e){
     var src, dest, isEncode
     src = $dropbox.val()
     isEncode = $('[name="go"]:checked').val() === 'encode'? true:false

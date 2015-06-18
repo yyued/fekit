@@ -16,7 +16,8 @@
     "mustache": "^2.1.0",
     "node-notifier": "^4.2.1",
     "qr-image": "^3.1.0",
-    "uglify-js": "^2.4.23"
+    "uglify-js": "^2.4.23",
+    "xmlhttprequest": "^1.7.0"
   },
   "repository": {
     "type": "git",
