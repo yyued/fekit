@@ -1,0 +1,123 @@
+/* 布局 */
+html, body, .Nav, .Main {
+    height: 100%; }
+
+body {
+    min-width: 940px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.Nav {
+    *zoom: 1;
+    float: left;
+    width: 200px;
+    background-color: #3F4A59;
+    color: #fff;
+}
+.Nav:before,
+.Nav:after {
+    content: "";
+    display: table;
+    line-height: 0; }
+.Nav:after {
+    clear: both; }
+
+.Main  {
+    margin-left: 200px;
+    background-color: #F3F5F6; }
+
+/* 菜单 */
+.group {
+    margin-top: 20px; }
+
+.group__name {
+    font-size: 16px;
+    text-indent: .5em; }
+
+.group__item {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+    color: #fff;
+    text-indent: 2em;
+    color: #fff;
+    cursor: pointer; }
+
+.group__item.-active,
+.group__item:hover {
+    background-color: #33DABD;
+    color: #fff;
+    text-decoration: none; }
+
+/* 内容 */
+#targetPage {
+    height: 100%;
+    width: 100%; }
+
+
+/* addon */
+.Nav{min-height: 500px; overflow: auto; }
+
+
+
+body.fekit{
+    background-color: #F3F5F6;
+    padding: 0 20px;
+}
+body.fekit h1{
+    margin: 0 -20px 20px;
+    height: 80px; line-height: 80px; overflow: hidden;
+    text-indent: 1em;
+    background-color: #fff;
+    color: #465161;
+}
+body.fekit .form-wrap{
+    background-color: #FAFBFC;
+    border: 0 none;
+    margin-bottom: 20px;
+}
+body.fekit textarea{
+    box-sizing: border-box;
+    padding: 6px 12px;
+    border: 0 none;
+    width: 100%;
+    outline: 0 none;
+    color: #465161;
+}
+body.fekit input{
+    border: 0 none;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 5px 10px;
+    background-color: #fff;
+    color: #465161;
+    outline: 0 none;
+}
+body.fekit button{
+    border: 0 none;
+    background-color: #33DABD;
+    color: #fff;
+    height: 40px; line-height: 40px; overflow: hidden;
+    display: block;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+body.fekit #out{
+    color: #465161;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #FFF;
+    border: 0 none;
+    padding: 6px 12px;
+}
+
+.Main ::-webkit-scrollbar-track-piece{background-color:#576270;}
+.Main ::-webkit-scrollbar{width:5px;}
+.Main ::-webkit-scrollbar-thumb{background:#33DABD;}
+.Nav ::-webkit-scrollbar-track-piece{background-color:#576270;}
+.Nav ::-webkit-scrollbar{width:5px;}
+.Nav ::-webkit-scrollbar-thumb{background:#33DABD;}
