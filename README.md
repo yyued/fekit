@@ -24,5 +24,5 @@
 * 在任意目录执行 `nwbuild <path-to-nwapp>`，[详细][1]
 
 [1]: https://github.com/mllrsohn/node-webkit-builder
-[2]: http://pan.baidu.com/s/1sjkepCL#path=%252Ffekit%252Fosx64
-[3]: http://pan.baidu.com/s/1sjkepCL#path=%252Ffekit%252Fwin64
+[2]: http://pan.baidu.com/s/1nt67YqP
+[3]: http://pan.baidu.com/s/1kT7sc9T
