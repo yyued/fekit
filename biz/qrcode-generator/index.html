@@ -37,6 +37,11 @@
 
 <script src="../../js/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="index.js"></script>
+<script>
+    $('body')[0].addEventListener('DOMSubtreeModified', function (e) {
+        parent.__resetLayout()
+    }, false)
+</script>
 </body>
 
 </html>

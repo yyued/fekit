@@ -39,11 +39,13 @@
 </div>
 
 <div class="Main">
+    <!-- <div class="Main__inner"> -->
     <iframe id="targetPage" src="biz/base64-encoder/index.html" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+    <!-- </div> -->
 </div>
 
-<!--<script src="http://assets.dwstatic.com/common/js/jquery.js"></script>-->
 <script>
+void function(){
 
     // gobal lib
     var _ = require('lodash')
@@ -62,6 +64,7 @@
         });
         gui.Window.get().menu = mb;
     }
+
 
     // Menu render
     renderMenu()
@@ -106,17 +109,53 @@
         return _.find(arr, {default:true}).path
     }
 
+    window.$ = $
+    // iframe_height_reset
+    window.__resetLayout = function(){
+        var el = $('#targetPage')[0]
+        return function(){
+            el.style.height =
+            el.contentWindow.document.body.offsetHeight + 'px';
+        }
+    }()
+    $('#targetPage').load(__resetLayout)
 
+    // var f = $('#targetPage')[0]
+    // var e = f.contentWindow.document.getElementById('out')
+    // window.f = f
+    // window.e = e
+    // e.on('DOMSubtreeModified', function(e){
+    //     alert(1)
+    // }, false)
+    // $(f.contentWindow).on('click', function(e){
+    //     console.log(1)
+    // })
+
+}()
 </script>
 
 <!-- dev relaod -->
 <script>
     var gulp = require('gulp');
     gulp.task('reload', function () {
-        if (location) location.reload();
+
+//        if (location) location.reload();
     });
 
-    gulp.watch(['*.html', 'js/**', 'img/**', 'css/**', 'biz/**'], ['reload']);
+    gulp.watch(['*.html', 'js/**', 'img/**', 'css/**', 'biz/**'], function(event){
+        console.log('File ' + event.path + ' was ' + event.type + ', running tasks...')
+//        cleanCache(event.path)
+    });
+
+    function cleanCache(modulePath) {
+        var module = require.cache[modulePath];
+        // remove reference in module.parent
+        if (module.parent) {
+            module.parent.children.splice(module.parent.children.indexOf(module), 1);
+        }
+        require.cache[modulePath] = null;
+    }
+
 </script>
 
 

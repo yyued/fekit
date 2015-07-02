@@ -688,6 +688,8 @@ body {
     clear: both; }
 
 .Main {
+    height: 500px;
+    overflow: auto;
     margin-left: 247px;
     background-color: #f2f2f2; }
 

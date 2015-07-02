@@ -1,12 +1,12 @@
 {
   "name": "fekit",
   "description": "f2e dev toolkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.html",
   "window": {
     "toolbar": false,
     "width": 940,
-    "height": 500
+    "height": 600
   },
   "dependencies": {
     "clean-css": "^3.2.9",
@@ -16,6 +16,7 @@
     "mustache": "^2.1.0",
     "node-notifier": "^4.2.1",
     "qr-image": "^3.1.0",
+    "simple-color-picker": "0.0.6",
     "uglify-js": "^2.4.23",
     "xmlhttprequest": "^1.7.0"
   },

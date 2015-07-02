@@ -111,7 +111,7 @@ function isElement(el){
 
 function dragAndBrowser(el, handleFiles){
     var $el = $(el)
-    var $file = $('<input type="file" style="display: none"/>')
+    var $file = $('<input type="file" style="display: none" accept="image/*" />')
     $file.insertAfter($el)
 
     $el.on('dblclick', function(e){

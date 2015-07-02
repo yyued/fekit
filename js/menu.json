@@ -1,16 +1,6 @@
 {
   "menu": [
     {
-      "name": "UI",
-      "items": [
-        {
-          "name": "表单UI (TODO)",
-          "path": "ui"
-
-        }
-      ]
-    },
-    {
       "name": "编码解码",
       "items": [
         {
@@ -19,7 +9,7 @@
           "path": "url-encoder"
         },
         {
-
+          
           "name": "图片 base64编码",
           "path": "base64-encoder"
 
@@ -55,7 +45,7 @@
       "name": "转义",
       "items": [
         {
-          "default": true,
+          
           "name": "html",
           "path": "html-escaper"
         },
@@ -70,19 +60,21 @@
       "items": [
         {
 
-          "name": "regExp 测试",
+          "default": true,
+          "name": "regExp 匹配器",
           "path": "regexp-tester"
         },
         {
-          "name": "css 三角形 (TODO)",
+          "name": "css 三角形",
           "path": "css-triangle"
         },
         {
-          "name": "css 透明背景 (TODO)",
+          
+          "name": "css 透明背景",
           "path": "css-transparent"
         },
         {
-          "name": "设计稿标注 (TODO)",
+          "name": "设计稿标注",
           "path": "color-palette"
         }
       ]
